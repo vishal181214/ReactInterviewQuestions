@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Two</title>
+</head>
+<body>
+    <div style="margin-left:10%">
+        <h3>What is the Difference between react and react native? Which one is library or framework?</h3>
+            <p>React is a JavaScript library of reusable components designed to create skeletons of the 
+                apps, whereas React Native is a javascript<br> framework designed to build native mobile apps
+                 with reusable components.</p>
+
+        <h3>What is the package name you are using for routing?</h3> 
+            <p>React-Router-Dom Package</p>
+
+        <h3>Routing Implementation?</h3>
+    <pre>
+        import ReactDOM from "react-dom/client";
+        import { BrowserRouter, Routes, Route } from "react-router-dom";
+        import Layout from "./pages/Layout";
+        import Home from "./pages/Home";
+        import Blogs from "./pages/Blogs";
+        import Contact from "./pages/Contact";
+        import NoPage from "./pages/NoPage";
+
+        export default function App() {
+        return (
+            <span><</span>BrowserRouter<span>></span>
+                <span><</span>Routes<span>></span>
+                <span><</span> Route path="/" element={<span><</span> Layout / <span>></span>} <span>></span>
+                <span><</span>Route index element={<span><</span> Home / <span>></span>} /<span>></span>
+                <span><</span>Route path="blogs" element={<span><</span> Blogs / <span>></span>} /<span>></span>
+                <span><</span>Route path="contact" element={<span><</span>Contact / <span>></span>} /<span>></span>
+                <span><</span>Route path="*" element={<span><</span>NoPage / <span>></span>} /<span>></span>
+                <span><</span>/Route<span>></span>
+            <span><</span>/Routes<span>></span>
+            <span><</span>/BrowserRouter<span>></span>
+        );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </pre>
+
+        <h3>How do you pass data from parent to child?</h3>
+            <pre>
+                <h3>Parent Component app.js</h3>
+                import React, { Component } from 'react';
+                import Child from './components/child.js';
+                class App extends Component {
+                render() {
+                    return (<h5 style="margin-left:15%;">This is a parent component</h5>
+                            <span><</span>Child gfgcolor="green" usercolor="blue"/<span>></span>
+                            );
+                        }
+                        }
+                        export default App;
+                <h3 style="margin-left:7%;">Child Component</h3>
+                import React, { Component } from 'react';
+                class Child extends Component {
+                render() {
+                    return (<span>
+                                <span style="margin-left:0%;">This is a child component</span>
+                                <span style="margin-left:0%;">GeeksForGeeks {this.props.gfgcolor}</span>
+                                <span style="margin-left:0%;">Hello greet {this.props.usercolor}</span>
+                                );
+                            }
+                            }
+                            </span>
+                export default Child;
+            </pre>
+
+        <h3>What is lazy loading in react?</h3>
+            <p>Lazy loading is a technique for waiting to load certain parts of a webpage
+               until they are needed. Instead of loading everything all at once, known as<br>
+               "eager" loading, the browser does not request certain resources until the 
+               user interacts in such a way that the resources are needed.</p>
+
+        <h3>Difference b/w Stateful and stateless Component?</h3>
+            <p>The literal difference is that Stateful component has state, and stateless doesn’t. 
+                That means the stateful components <br> are keeping track of changing data, while
+                stateless components print out what is given to them via props, or they always
+                render the same thing.</p>
+            <p>Stateful component is also known as Stateful/Container/Smart component</p>
+            <p>Stateless component is also known as Stateless/Presentational/Dumb component:</p>
+
+        <h3>How do you switch one component to another, Conditional Rendering?</h3>
+            <pre>
+                const isLoggedIn = props.isLoggedIn;
+                if (isLoggedIn) {
+                    return <span><</span>UserGreeting /<span>></span>;
+                }
+                return <span><</span>GuestGreeting /<span>></span>;
+            </pre>
+    </div>
+    
+</body>
+</html>
